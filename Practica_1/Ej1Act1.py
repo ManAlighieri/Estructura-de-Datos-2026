@@ -10,6 +10,7 @@ promsuper = [tonelada for tonelada in tonelada_cereal if tonelada > promedio_tot
 superior = (len(promsuper))
 print(superior)
 
+#Realizar una comparacion de todos los valores vs promedio
 prominfe = [tonelada for tonelada in tonelada_cereal if tonelada < promedio_total]
 inferior = (len(prominfe))
 print(inferior)
