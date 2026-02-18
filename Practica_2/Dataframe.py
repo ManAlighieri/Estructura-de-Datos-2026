@@ -5,4 +5,6 @@ df = pd.read_csv('./Housing.csv')
 
 #Mostrar las primeras 5 filas
 print(df.head())
+lista = df['price']
+print(lista)
 
