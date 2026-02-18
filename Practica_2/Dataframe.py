@@ -29,12 +29,11 @@ def media(lista):
     return print("Media: ", media)
 
 def moda(lista):
-    moda = 0
+    frecuencia = {}
     for i in lista:
-        if lista.count(i) > moda:
-            moda = lista.count(i)
-            modaf = i
-    return  print("Moda: ", modaf)
+        frecuencia[i] = frecuencia.get(i, 0) + 1
+        moda = max(frecuencia, key=frecuencia.get)
+    return  print("Moda: ", moda)
 
 def varianza(lista):
     media = sum(lista) / len(lista)
