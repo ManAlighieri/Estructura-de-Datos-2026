@@ -20,7 +20,6 @@ A = [
 #else:    
     #print(listadecoordenadas)
 
-
 def coordenadas(A, valor):
     listadecoordenadas = []
     for i in range(len(A[0])):
@@ -33,3 +32,20 @@ def coordenadas(A, valor):
         return print(listadecoordenadas)
 
 coordenadas(A, 7)
+
+
+def coordenadasVector(matriz,valor):
+    coordenadas = []
+    vector = []
+    l = 0
+    k = 0
+    m = 0
+    columna = len(matriz[0])
+
+    while l < len(matriz):
+        vector += matriz[l]
+        l += 1
+    while k < len(vector):
+        if vector[k] == valor:
+            i = k 
+    
