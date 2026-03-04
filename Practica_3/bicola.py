@@ -1,59 +1,66 @@
-def enque(lista, elemento):
-    lista.append(elemento)
-    
-def  deque_head(lista,lista2):
-    enque(lista2,lista[0])
-    lista.pop(0)
+class Bicola:
+    def __init__(self):
+        self.cola = []
 
-def  deque_tail(lista,lista2):
-    enque(lista2,lista[-1])
-    lista.pop(-1)
+    def enque_head(self, elemento):
+        self.cola.insert(0, elemento)
 
-def peek(lista):
-    return lista[0]
+    def enque_tail(self, elemento):
+        self.cola.append(elemento)
 
-def is_empty(lista):
-    if lista == []:
-        return True
-    else:
-        return False
-    
-def size(lista):
-    return len(lista)
+    def deque_head(self):
+        if self.is_empty():
+            return None
+        return self.cola.pop(0)
 
-def retiros(lista, lista2):
-    r = lista[0] - lista2[0]
-    deque_head(lista, lista2)
-    enque(lista, r)
+    def deque_tail(self):
+        if self.is_empty():
+            return None
+        return self.cola.pop(-1)
 
-def depositos(lista, lista2):
-    d = lista[-1] + lista2[0]
-    deque_tail(lista, lista2)
-    lista.insert(0, d)
+    def peek_head(self):
+        return self.cola[0]
 
-saldos = []
-retiro = []
-deposito = []    
+    def peek_tail(self):
+        return self.cola[-1]
 
-enque(saldos, 1000)
-enque(saldos, 1000)
-enque(saldos, 1000)
-enque(saldos, 1000)
-enque(saldos, 1000)
-print(saldos)
+    def is_empty(self):
+        return self.cola == []
 
-retiro = [500]
-retiros(saldos, retiro)
-retiros(saldos, retiro)
-retiros(saldos, retiro)
-retiros(saldos, retiro)
-retiros(saldos, retiro)
-print(saldos)
+    def size(self):
+        return len(self.cola)
 
-deposito = [300]
-depositos(saldos, deposito)
-depositos(saldos, deposito)
-depositos(saldos, deposito)
-depositos(saldos, deposito)
-depositos(saldos, deposito)
-print(saldos)
+    def __str__(self):
+        return str(self.cola)
+
+    def retiros(self, monto):
+        valor = self.deque_head()        # saca por el head
+        self.enque_tail(valor - monto)   # regresa por el tail (rota)
+
+    def depositos(self, monto):
+        valor = self.deque_tail()        # saca por el tail
+        self.enque_head(valor + monto)   # regresa por el head (rota)
+
+
+bicola = Bicola()
+bicola.enque_tail(1000)
+bicola.enque_tail(1000)
+bicola.enque_tail(1000)
+bicola.enque_tail(1000)
+bicola.enque_tail(1000)
+print(bicola)
+
+bicola.retiros(500)
+bicola.retiros(400)
+bicola.retiros(300)
+bicola.retiros(200)
+bicola.retiros(100)
+print(bicola)
+
+bicola.depositos(300)
+bicola.depositos(300)
+bicola.depositos(300)
+bicola.depositos(300)
+bicola.depositos(300)
+print(bicola)
+
