@@ -1,32 +1,22 @@
-class Bicola:
-    def __init__(self):
-        self.cola = []
+from collections import deque
 
-    def is_empty(self):
-        return self.cola == []
+p = deque(maxlen=3)
 
-    def enque_head(self, elemento):
-        self.cola.insert(0, elemento)
+p.append(0)
+p.append(2)
+p.append(4)
+print(list(p))  
 
-    def enque_tail(self, elemento):
-        self.cola.append(elemento)
 
-    def deque_head(self):
-        if self.is_empty():
-            return None
-        return self.cola.pop(0)
+x = p.popleft()     
+p.appendleft(6)      
+p.appendleft(x)     
+print(list(p))       
 
-    def deque_tail(self):
-        if self.is_empty():
-            return None
-        return self.cola.pop(-1)
-
-    def peek_head(self):
-        if self.is_empty():
-            return None
-        return self.cola[0]
-
-    def peek_tail(self):
-        if self.is_empty():
-            return None
-        return self.cola[-1]
+x = p.pop()         
+p.pop()            
+p.pop()             
+p.appendleft(12)    
+p.appendleft(x)      
+p.pop()            
+print(list(p))  
