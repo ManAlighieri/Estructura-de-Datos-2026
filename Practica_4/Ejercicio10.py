@@ -6,15 +6,14 @@ tiempo = [0, 2, 4, 6, 12]
 
 for x in tiempo:
     print("\nLlega", x)
+
     if cola and x - cola[0] >= limite:
         while cola:
-            print("Se retiro", cola.popleft())
-        print("Se agrega", x)
-        cola.append(x)
+            print("dequeue", cola.popleft())
 
-    elif len(cola) < cola.maxlen:
-        print("Se agrega", x)
-        cola.append(x)
-
-print("En cola:", cola)
-print("Lista:", list(cola))
+    elif len(cola) == cola.maxlen:
+        print("dequeue", cola.popleft())
+        
+    cola.append(x)
+    print("enqueue", x)
+    print("En cola:", list(cola))
