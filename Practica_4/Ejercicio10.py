@@ -1,22 +1,20 @@
 from collections import deque
 
-p = deque(maxlen=3)
+cola = deque(maxlen=3)
+limite = 10
+tiempo = [0, 2, 4, 6, 12]
 
-p.append(0)
-p.append(2)
-p.append(4)
-print(list(p))  
+for x in tiempo:
+    print("\nLlega", x)
+    if cola and x - cola[0] >= limite:
+        while cola:
+            print("Se retiro", cola.popleft())
+        print("Se agrega", x)
+        cola.append(x)
 
+    elif len(cola) < cola.maxlen:
+        print("Se agrega", x)
+        cola.append(x)
 
-x = p.popleft()     
-p.appendleft(6)      
-p.appendleft(x)     
-print(list(p))       
-
-x = p.pop()         
-p.pop()            
-p.pop()             
-p.appendleft(12)    
-p.appendleft(x)      
-p.pop()            
-print(list(p))  
+print("En cola:", cola)
+print("Lista:", list(cola))
