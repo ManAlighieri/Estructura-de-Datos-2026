@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+{{ nombre }}
+{% endblock %}
+
+{% block content %}
+
+<div class="contenedor">
+
+    <a class="boton" href="/">⬅ Volver</a>
+
+    <h2>{{ nombre }}</h2>
+
+    <div class="grid">
+
+        {% for archivo in archivos %}
+
+            <a class="card" href="{{ url_for('archivo', practica=nombre, archivo=archivo) }}">
+                <h3>{{ archivo }}</h3>
+            </a>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% endblock %}

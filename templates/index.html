@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Inicio
+{% endblock %}
+
+{% block content %}
+
+<div class="contenedor">
+
+    <h2>Prácticas Disponibles</h2>
+
+    <div class="grid">
+
+        {% for practica, archivos in practicas.items() %}
+
+            <a class="card" href="{{ url_for('practica', nombre=practica) }}">
+                <h3>{{ practica }}</h3>
+                <p>{{ archivos|length }} archivos</p>
+            </a>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% endblock %}
