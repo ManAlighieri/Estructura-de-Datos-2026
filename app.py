@@ -69,6 +69,21 @@ def ver_practica(practica):
         archivos=practicas[practica]
     )
 
+@app.route("/practica/<practica>/<archivo>")
+def ver_archivo(practica, archivo):
+
+    ruta = os.path.join(BASE_DIR, practica, archivo)
+
+    codigo = leer_codigo(ruta)
+    salida = ejecutar_codigo(ruta)
+
+    return render_template(
+        "archivo.html",
+        practica=practica,
+        archivo=archivo,
+        codigo=codigo,
+        salida=salida
+    )
 
 @app.route("/codigo/<practica>/<archivo>")
 def ver_codigo(practica, archivo):

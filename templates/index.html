@@ -14,7 +14,7 @@ Inicio
 
         {% for practica, archivos in practicas.items() %}
 
-            <a class="card" href="{{ url_for('practica', nombre=practica) }}">
+            <a class="card" href="{{ url_for('ver_practica', practica=practica) }}">
                 <h3>{{ practica }}</h3>
                 <p>{{ archivos|length }} archivos</p>
             </a>

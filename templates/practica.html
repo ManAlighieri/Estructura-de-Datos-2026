@@ -16,7 +16,7 @@
 
         {% for archivo in archivos %}
 
-            <a class="card" href="{{ url_for('archivo', practica=nombre, archivo=archivo) }}">
+            <a class="card" href="{{ url_for('ver_archivo', practica=nombre, archivo=archivo) }}">
                 <h3>{{ archivo }}</h3>
             </a>
 
