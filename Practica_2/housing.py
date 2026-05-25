@@ -1,8 +1,11 @@
+import os
 import pandas as pd
 import numpy as np
 
 #Leer archivo CSV delimitado por comas (por defecto)
-df = pd.read_csv('./Housing.csv')
+ruta_csv = os.path.join(os.path.dirname(__file__), "Housing.csv")
+
+df = pd.read_csv(ruta_csv)
 
 #Mostrar las primeras 5 filas
 #lista = df['price'].tolist()
