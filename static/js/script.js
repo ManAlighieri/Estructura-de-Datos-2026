@@ -1,1 +1,1 @@
-console.log("Plataforma iniciada correctamente");
+console.log("Plataforma de Estructuras de Datos iniciada correctamente");

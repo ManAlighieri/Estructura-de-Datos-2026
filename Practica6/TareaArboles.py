@@ -310,7 +310,9 @@ def construir_ast_simple(expr):
     "Parser básico para expresiones con paréntesis."
     expr = expr.replace(" ", "")
     def parse(s):
-        if s[0] == "(":
+        if not s:
+            return NodoAST("")
+        if s[0] == "(" and s[-1] == ")":
             s = s[1:-1]
         for op in ("+-", "*/"):
             depth = 0
