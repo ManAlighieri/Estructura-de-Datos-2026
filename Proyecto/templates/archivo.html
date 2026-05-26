@@ -2,19 +2,6 @@
 {% block title %}{{ archivo }} — {{ practica }}{% endblock %}
 {% block content %}
 <div class="page-archivo">
-{# Encabezado con autor, grupo y botón volver #}
-<div class="page-meta">
-  <div class="meta-left">
-    <div class="meta-name">{{ autor | default('Alejandro de Jesus Delgado Gonzalez') }}</div>
-    <div class="meta-group">{{ grupo | default('Grupo: 4-C') }}</div>
-  </div>
-  <div class="meta-right">
-    <button class="back-btn" onclick="history.back()">
-      ← Volver
-    </button>
-  </div>
-</div>
-
   <div class="breadcrumb">
     <a href="{{ url_for('inicio') }}">Inicio</a>
     <span>/</span>
