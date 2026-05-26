@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{% block title %}Inicio — Estructuras de Datos{% endblock %}
+{% block content %}
+<div class="page-index">
+
+  <div class="index-header">
+    <h1 class="index-title">Prácticas <span>disponibles</span></h1>
+    <p class="index-sub">Selecciona una práctica para ver y ejecutar sus programas</p>
+  </div>
+
+  <div class="practicas-grid">
+    {% for practica, archivos in practicas.items() %}
+    <a class="practica-card" href="{{ url_for('ver_practica', practica=practica) }}">
+      <div class="pc-top">
+        <span class="pc-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+        </span>
+        <span class="pc-num">{{ loop.index }}</span>
+      </div>
+      <h3 class="pc-name">{{ practica.replace('_', ' ') }}</h3>
+      <div class="pc-meta">
+        <span class="pc-files">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          {{ archivos|length }} archivo{{ 's' if archivos|length != 1 else '' }}
+        </span>
+        <span class="pc-arrow">→</span>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+
+</div>
+{% endblock %}
