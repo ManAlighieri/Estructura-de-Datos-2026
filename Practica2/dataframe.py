@@ -1,12 +1,11 @@
 import os
 import pandas as pd
-import numpy as np
 
-#Leer archivo CSV delimitado por comas (por defecto)
-ruta_csv = os.path.join(os.path.dirname(__file__), "Housing.csv")
+# Ruta al CSV dentro de Practica2
+ruta_csv = os.path.join(os.path.dirname(__file__), "..", "Practica2", "Housing.csv")
 
+# Leer el CSV una sola vez al iniciar la aplicación
 df = pd.read_csv(ruta_csv)
-
 #Mostrar las primeras 5 filas
 #lista = df['price'].tolist()
 
