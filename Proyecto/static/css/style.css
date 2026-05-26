@@ -387,3 +387,53 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); min-
 }
 .abb-log b { color: var(--blue); font-weight: 500; }
 .log-step { color: var(--text-dim); }
+
+/* -------------------------
+   Visualizaciones genéricas
+   ------------------------- */
+.algo-controls { display:flex; gap:8px; margin-bottom:12px; flex-wrap:wrap; }
+.algo-controls button {
+  padding:8px 10px;
+  border-radius:6px;
+  border:1px solid var(--border);
+  background:var(--bg3);
+  color:var(--text);
+  cursor:pointer;
+  font-family:var(--mono);
+  font-size:13px;
+}
+.algo-controls button:hover { border-color:var(--blue); color:var(--blue); }
+
+.algo-array { display:flex; gap:8px; margin-bottom:12px; flex-wrap:wrap; }
+.algo-array div {
+  padding:8px 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));
+  border:1px solid var(--border);
+  border-radius:6px;
+  font-family:var(--mono);
+  font-size:13px;
+  color:var(--text);
+  white-space:nowrap;
+}
+
+.algo-log {
+  font-family:var(--mono);
+  font-size:13px;
+  color:var(--dim);
+  background:var(--bg-term);
+  border:1px solid var(--border);
+  border-radius:6px;
+  padding:10px 12px;
+  min-height:48px;
+  white-space:pre-wrap;
+}
+
+/* autoplay small buttons */
+.algo-controls .auto-btn { background: rgba(88,166,255,.06); border-color: rgba(88,166,255,.12); color:var(--blue); }
+.algo-controls .stop-btn { background: rgba(255,88,88,.04); border-color: rgba(255,88,88,.06); color: #ff9b9b; }
+
+/* responsive tweaks */
+@media (max-width:860px) {
+  .algo-array { gap:6px; }
+  .algo-array div { padding:6px 8px; font-size:12px; }
+}

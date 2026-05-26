@@ -14,9 +14,3 @@ print(superior)
 prominfe = [tonelada for tonelada in tonelada_cereal if tonelada < promedio_total]
 inferior = (len(prominfe))
 print(inferior)
-
-
-
-
-
-

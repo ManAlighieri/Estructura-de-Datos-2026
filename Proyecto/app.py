@@ -4,7 +4,8 @@ import subprocess
 import sys
 
 app = Flask(__name__)
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 
 def obtener_practicas():
     practicas = {}

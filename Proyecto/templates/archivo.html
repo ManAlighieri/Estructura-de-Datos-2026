@@ -79,6 +79,168 @@
 
 </div>
 
+{# Bubble Sort #}
+{% if archivo == 'Bubblesort.py' %}
+<div class="viz-section">
+  <div class="viz-header">Visualización paso a paso — Bubble Sort</div>
+  <div class="viz-body">
+    <div class="algo-controls">
+      <button onclick="algoPrev('bubble')">Anterior</button>
+      <button onclick="algoNext('bubble')">Siguiente</button>
+      <button onclick="algoReset('bubble')">Reiniciar</button>
+      <button class="auto-btn" onclick="autoPlay('bubble',700)">Auto</button>
+      <button class="stop-btn" onclick="stopAuto('bubble')">Parar</button>
+    </div>
+    <div id="bubble-array" class="algo-array"></div>
+    <div id="bubble-log" class="algo-log"></div>
+  </div>
+</div>
+{% endif %}
+
+{# Selection Sort #}
+{% if archivo == 'Selectionsort.py' %}
+<div class="viz-section">
+  <div class="viz-header">Visualización paso a paso — Selection Sort</div>
+  <div class="viz-body">
+    <div class="algo-controls">
+      <button onclick="algoPrev('selection')">Anterior</button>
+      <button onclick="algoNext('selection')">Siguiente</button>
+      <button onclick="algoReset('selection')">Reiniciar</button>
+      <button class="auto-btn" onclick="autoPlay('selection',700)">Auto</button>
+      <button class="stop-btn" onclick="stopAuto('selection')">Parar</button>
+    </div>
+    <div id="selection-array" class="algo-array"></div>
+    <div id="selection-log" class="algo-log"></div>
+  </div>
+</div>
+{% endif %}
+
+{# Insertion Sort #}
+{% if archivo == 'Insertionsort.py' %}
+<div class="viz-section">
+  <div class="viz-header">Visualización paso a paso — Insertion Sort</div>
+  <div class="viz-body">
+    <div class="algo-controls">
+      <button onclick="algoPrev('insertion')">Anterior</button>
+      <button onclick="algoNext('insertion')">Siguiente</button>
+      <button onclick="algoReset('insertion')">Reiniciar</button>
+      <button class="auto-btn" onclick="autoPlay('insertion',700)">Auto</button>
+      <button class="stop-btn" onclick="stopAuto('insertion')">Parar</button>
+    </div>
+    <div id="insertion-array" class="algo-array"></div>
+    <div id="insertion-log" class="algo-log"></div>
+  </div>
+</div>
+{% endif %}
+
+{# Merge Sort #}
+{% if archivo == 'Mergesort.py' %}
+<div class="viz-section">
+  <div class="viz-header">Visualización paso a paso — Merge Sort</div>
+  <div class="viz-body">
+    <div class="algo-controls">
+      <button onclick="algoPrev('merge')">Anterior</button>
+      <button onclick="algoNext('merge')">Siguiente</button>
+      <button onclick="algoReset('merge')">Reiniciar</button>
+      <button class="auto-btn" onclick="autoPlay('merge',900)">Auto</button>
+      <button class="stop-btn" onclick="stopAuto('merge')">Parar</button>
+    </div>
+    <div id="merge-array" class="algo-array"></div>
+    <div id="merge-log" class="algo-log"></div>
+  </div>
+</div>
+{% endif %}
+
+{# Quick Sort #}
+{% if archivo == 'Quicksort.py' %}
+<div class="viz-section">
+  <div class="viz-header">Visualización paso a paso — Quick Sort</div>
+  <div class="viz-body">
+    <div class="algo-controls">
+      <button onclick="algoPrev('quick')">Anterior</button>
+      <button onclick="algoNext('quick')">Siguiente</button>
+      <button onclick="algoReset('quick')">Reiniciar</button>
+      <button class="auto-btn" onclick="autoPlay('quick',900)">Auto</button>
+      <button class="stop-btn" onclick="stopAuto('quick')">Parar</button>
+    </div>
+    <div id="quick-array" class="algo-array"></div>
+    <div id="quick-log" class="algo-log"></div>
+  </div>
+</div>
+{% endif %}
+
+{# BFS #}
+{% if archivo == 'BFS.py' %}
+<div class="viz-section">
+  <div class="viz-header">Visualización paso a paso — BFS (Recorrido por niveles)</div>
+  <div class="viz-body">
+    <div class="algo-controls">
+      <button onclick="algoPrev('bfs')">Anterior</button>
+      <button onclick="algoNext('bfs')">Siguiente</button>
+      <button onclick="algoReset('bfs')">Reiniciar</button>
+      <button class="auto-btn" onclick="autoPlay('bfs',800)">Auto</button>
+      <button class="stop-btn" onclick="stopAuto('bfs')">Parar</button>
+    </div>
+    <div id="bfs-array" class="algo-array"></div>
+    <div id="bfs-log" class="algo-log"></div>
+  </div>
+</div>
+{% endif %}
+
+{# Hanoi #}
+{% if archivo == 'Hanoi.py' %}
+<div class="viz-section">
+  <div class="viz-header">Visualización paso a paso — Torres de Hanoi</div>
+  <div class="viz-body">
+    <div class="algo-controls">
+      <button onclick="algoPrev('hanoi')">Anterior</button>
+      <button onclick="algoNext('hanoi')">Siguiente</button>
+      <button onclick="algoReset('hanoi')">Reiniciar</button>
+      <button class="auto-btn" onclick="autoPlay('hanoi',700)">Auto</button>
+      <button class="stop-btn" onclick="stopAuto('hanoi')">Parar</button>
+    </div>
+    <div id="hanoi-array" class="algo-array"></div>
+    <div id="hanoi-log" class="algo-log"></div>
+  </div>
+</div>
+{% endif %}
+
+{# Kruskal #}
+{% if archivo == 'Kruskal.py' %}
+<div class="viz-section">
+  <div class="viz-header">Visualización paso a paso — Kruskal (AGM)</div>
+  <div class="viz-body">
+    <div class="algo-controls">
+      <button onclick="algoPrev('kruskal')">Anterior</button>
+      <button onclick="algoNext('kruskal')">Siguiente</button>
+      <button onclick="algoReset('kruskal')">Reiniciar</button>
+      <button class="auto-btn" onclick="autoPlay('kruskal',900)">Auto</button>
+      <button class="stop-btn" onclick="stopAuto('kruskal')">Parar</button>
+    </div>
+    <div id="kruskal-array" class="algo-array"></div>
+    <div id="kruskal-log" class="algo-log"></div>
+  </div>
+</div>
+{% endif %}
+
+{# Prim #}
+{% if archivo == 'Prim.py' %}
+<div class="viz-section">
+  <div class="viz-header">Visualización paso a paso — Prim (AGM)</div>
+  <div class="viz-body">
+    <div class="algo-controls">
+      <button onclick="algoPrev('prim')">Anterior</button>
+      <button onclick="algoNext('prim')">Siguiente</button>
+      <button onclick="algoReset('prim')">Reiniciar</button>
+      <button class="auto-btn" onclick="autoPlay('prim',900)">Auto</button>
+      <button class="stop-btn" onclick="stopAuto('prim')">Parar</button>
+    </div>
+    <div id="prim-array" class="algo-array"></div>
+    <div id="prim-log" class="algo-log"></div>
+  </div>
+</div>
+{% endif %}
+
 <script>
 async function reejecutar(practica, archivo) {
   const btn   = document.querySelector('.btn-rerun');
