@@ -475,3 +475,32 @@ body { font-family: var(--sans); background: var(--bg); color: var(--text); min-
   color: var(--dim);
   line-height: 1.6;
 }
+
+/* Encabezado autor / grupo y botón volver */
+.page-meta {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-bottom:14px;
+  padding:10px 14px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));
+  border:1px solid var(--border);
+  border-radius: var(--r);
+}
+.page-meta .meta-left { display:flex; flex-direction:column; gap:2px; }
+.meta-name { font-family: var(--mono); font-size:14px; font-weight:600; color:var(--text); }
+.meta-group { font-family: var(--mono); font-size:12px; color:var(--dim); }
+
+.meta-right { display:flex; align-items:center; gap:8px; }
+.back-btn {
+  padding:8px 12px;
+  border-radius:8px;
+  border:1px solid var(--border);
+  background:var(--bg3);
+  color:var(--text);
+  cursor:pointer;
+  font-family:var(--mono);
+  font-size:13px;
+}
+.back-btn:hover { border-color:var(--blue); color:var(--blue); }
