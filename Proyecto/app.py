@@ -29,7 +29,7 @@ def ejecutar_codigo(practica, archivo):
             capture_output=True,
             text=True,
             encoding="utf-8",
-            timeout=30,
+            timeout=10,
             cwd=os.path.join(BASE_DIR, practica)
         )
         return {

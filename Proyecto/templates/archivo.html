@@ -11,6 +11,47 @@
     <span>{{ archivo }}</span>
   </div>
 
+{% set descripciones = {
+  'arreglo.py': ('Arreglos unidimensionales', 'Eliminación de duplicados en un arreglo ordenado usando comparación secuencial.'),
+  'calificaciones.py': ('Calificaciones de alumnos', 'Cálculo de promedio, aprobados, reprobados y porcentajes a partir de un arreglo de calificaciones.'),
+  'conteoletras.py': ('Conteo de letras', 'Cuenta la frecuencia de cada letra en una cadena de caracteres usando arreglos paralelos.'),
+  'promedio.py': ('Promedio de toneladas', 'Calcula el promedio de producción de cereal y determina cuántos meses superaron o estuvieron por debajo del promedio.'),
+  'asientos.py': ('Reservación de sala', 'Simula una sala con matriz booleana. Permite reservar, liberar y consultar asientos con validación de operaciones.'),
+  'coordenadasmatriz.py': ('Búsqueda en matriz', 'Encuentra todas las coordenadas donde aparece un valor dado dentro de una matriz 6x6.'),
+  'dataframe.py': ('Estadísticas con CSV', 'Calcula media, moda, varianza y desviación estándar de los precios del dataset Housing.csv.'),
+  'matrices.py': ('Multiplicación de matrices', 'Realiza la multiplicación de dos matrices 3x3 usando el algoritmo estándar de producto punto.'),
+  'bicola.py': ('Bicola de saldos', 'Implementa una bicola (deque) para gestionar retiros y depósitos en cuentas bancarias.'),
+  'colas.py': ('Cola básica', 'Implementación básica de cola con operaciones enqueue, dequeue, peek, is_empty y size.'),
+  'deque.py': ('Deque con historial', 'Cola doble con registro de historial para operaciones de retiro y depósito en saldos.'),
+  'retirosdepositos.py': ('Retiros y depósitos', 'Simula operaciones bancarias de retiro y depósito usando dos listas como cola.'),
+  'colascirculares.py': ('Cola circular', 'Implementación de cola circular con capacidad fija usando arreglo y punteros frente/final.'),
+  'expiracioncola.py': ('Cola con ventana deslizante', 'Gestiona una cola con límite de tiempo usando deque de tamaño máximo 3.'),
+  'tareas.py': ('Procesamiento de tareas', 'Simula una bicola que procesa tareas con fallos, reintentando las que no se completan correctamente.'),
+  'turnos.py': ('Turnos de atención', 'Sistema interactivo de cola circular para gestionar turnos de atención con menú de opciones.'),
+  'dulces.py': ('Ventas dulcería', 'Ordena ventas mensuales de una dulcería usando una pila y una cola en combinación.'),
+  'pilas.py': ('Pila — clase base', 'Implementación de la estructura pila con operaciones push, pop, peek e is_empty.'),
+  'ABB.py': ('Árbol Binario de Búsqueda', 'Implementación completa de ABB con inserción, recorridos y visualización del árbol en consola.'),
+  'BFS.py': ('Recorrido BFS', 'Recorrido en anchura (Breadth-First Search) sobre un grafo usando cola. Muestra el orden de visita.'),
+  'Hanoi.py': ('Torres de Hanoi', 'Solución recursiva al problema de las Torres de Hanoi para N discos con impresión de cada movimiento.'),
+  'TareaArboles.py': ('Tareas — Estructuras de árbol', 'Implementaciones de ABB, árbol N-ario, Huffman, Trie, AST y recorridos preorden/inorden/postorden.'),
+  'Bubblesort.py': ('Bubble Sort', 'Ordenamiento burbuja con optimización de parada temprana cuando no hay intercambios en una pasada.'),
+  'Countingsort.py': ('Counting Sort', 'Ordenamiento por conteo, eficiente para rangos de valores enteros acotados. Complejidad O(n+k).'),
+  'Insertionsort.py': ('Insertion Sort', 'Ordenamiento por inserción. Eficiente para arreglos pequeños o casi ordenados. Complejidad O(n²).'),
+  'Mergesort.py': ('Merge Sort', 'Ordenamiento por mezcla. Divide el arreglo recursivamente y combina las mitades ordenadas. O(n log n).'),
+  'Quicksort.py': ('Quick Sort', 'Ordenamiento rápido con pivote central. Divide en menores, iguales y mayores recursivamente.'),
+  'Randomquicksort.py': ('Quick Sort Aleatorio', 'Variante de Quick Sort que elige el pivote aleatoriamente para evitar el peor caso en arreglos ordenados.'),
+  'Selectionsort.py': ('Selection Sort', 'Ordenamiento por selección. Busca el mínimo en cada pasada y lo coloca en su posición. O(n²).'),
+  'Kruskal.py': ('Algoritmo de Kruskal', 'Encuentra el Árbol de Expansión Mínima ordenando aristas por peso y evitando ciclos con Union-Find.'),
+  'Prim.py': ('Algoritmo de Prim', 'Construye el Árbol de Expansión Mínima expandiendo el árbol desde un nodo inicial con la arista de menor peso.')
+} %}
+
+{% if archivo in descripciones %}
+<div class="archivo-desc">
+  <span class="desc-tag">{{ descripciones[archivo][0] }}</span>
+  <p class="desc-text">{{ descripciones[archivo][1] }}</p>
+</div>
+{% endif %}  
+
   <div class="archivo-header">
     <div class="archivo-title-group">
       <span class="ftype">py</span>
@@ -169,6 +210,42 @@
 </div>
 {% endif %}
 
+{# Counting Sort #}
+{% if archivo == 'Countingsort.py' %}
+<div class="viz-section">
+  <div class="viz-header">Visualización paso a paso — Counting Sort</div>
+  <div class="viz-body">
+    <div class="algo-controls">
+      <button onclick="algoPrev('counting')">Anterior</button>
+      <button onclick="algoNext('counting')">Siguiente</button>
+      <button onclick="algoReset('counting')">Reiniciar</button>
+      <button class="auto-btn" onclick="autoPlay('counting',700)">Auto</button>
+      <button class="stop-btn" onclick="stopAuto('counting')">Parar</button>
+    </div>
+    <div id="counting-array" class="algo-array"></div>
+    <div id="counting-log" class="algo-log"></div>
+  </div>
+</div>
+{% endif %}
+
+{# Random Quick Sort #}
+{% if archivo == 'Randomquicksort.py' %}
+<div class="viz-section">
+  <div class="viz-header">Visualización paso a paso — Quick Sort Aleatorio</div>
+  <div class="viz-body">
+    <div class="algo-controls">
+      <button onclick="algoPrev('rquick')">Anterior</button>
+      <button onclick="algoNext('rquick')">Siguiente</button>
+      <button onclick="algoReset('rquick')">Reiniciar</button>
+      <button class="auto-btn" onclick="autoPlay('rquick',900)">Auto</button>
+      <button class="stop-btn" onclick="stopAuto('rquick')">Parar</button>
+    </div>
+    <div id="rquick-array" class="algo-array"></div>
+    <div id="rquick-log" class="algo-log"></div>
+  </div>
+</div>
+{% endif %}
+
 {# BFS #}
 {% if archivo == 'BFS.py' %}
 <div class="viz-section">
@@ -241,6 +318,80 @@
 </div>
 {% endif %}
 
+{# Asientos #}
+{% if archivo == 'asientos.py' %}
+<div class="viz-section">
+  <div class="viz-header">Visualización interactiva — Sala de Asientos</div>
+  <div class="viz-body">
+    <div class="algo-controls">
+      <input type="number" id="asiento-fila" placeholder="Fila" min="1" max="6" style="width:70px;background:#1c2230;border:1px solid #30363d;border-radius:6px;color:#e6edf3;font-family:IBM Plex Mono,monospace;font-size:12px;padding:6px 10px;outline:none;">
+      <input type="number" id="asiento-col" placeholder="Col" min="1" max="6" style="width:70px;background:#1c2230;border:1px solid #30363d;border-radius:6px;color:#e6edf3;font-family:IBM Plex Mono,monospace;font-size:12px;padding:6px 10px;outline:none;">
+      <button onclick="asientoOp('reservar')">Reservar</button>
+      <button onclick="asientoOp('liberar')">Liberar</button>
+      <button onclick="asientoOp('consultar')">Consultar</button>
+      <button onclick="asientoReset()">Reiniciar</button>
+    </div>
+    <div id="asientos-grid" style="margin:16px 0;"></div>
+    <div id="asientos-log" class="algo-log"></div>
+  </div>
+</div>
+{% endif %}
+
+{# Deque #}
+{% if archivo == 'deque.py' %}
+<div class="viz-section">
+  <div class="viz-header">Visualización interactiva — Deque de Saldos</div>
+  <div class="viz-body">
+    <div class="algo-controls">
+      <input type="number" id="deque-monto" placeholder="Monto" style="width:90px;background:#1c2230;border:1px solid #30363d;border-radius:6px;color:#e6edf3;font-family:IBM Plex Mono,monospace;font-size:12px;padding:6px 10px;outline:none;">
+      <button onclick="dequeOp('retirar')">Retirar</button>
+      <button onclick="dequeOp('depositar')">Depositar</button>
+      <button onclick="dequeReset()">Reiniciar</button>
+    </div>
+    <div id="deque-visual" style="margin:16px 0;display:flex;gap:8px;flex-wrap:wrap;"></div>
+    <div id="deque-log" class="algo-log"></div>
+  </div>
+</div>
+{% endif %}
+
+{# Colas Circulares #}
+{% if archivo == 'colascirculares.py' %}
+<div class="viz-section">
+  <div class="viz-header">Visualización interactiva — Cola Circular</div>
+  <div class="viz-body">
+    <div class="algo-controls">
+      <input type="text" id="cola-valor" placeholder="Valor" style="width:90px;background:#1c2230;border:1px solid #30363d;border-radius:6px;color:#e6edf3;font-family:IBM Plex Mono,monospace;font-size:12px;padding:6px 10px;outline:none;">
+      <button onclick="colaOp('encolar')">Encolar</button>
+      <button onclick="colaOp('desencolar')">Desencolar</button>
+      <button onclick="colaOp('frente')">Ver frente</button>
+      <button onclick="colaOp('estado')">Estado</button>
+      <button onclick="colaReset()">Reiniciar</button>
+    </div>
+    <div id="cola-visual" style="margin:16px 0;"></div>
+    <div id="cola-log" class="algo-log"></div>
+  </div>
+</div>
+{% endif %}
+
+{# Pilas #}
+{% if archivo == 'pilas.py' %}
+<div class="viz-section">
+  <div class="viz-header">Visualización interactiva — Pila</div>
+  <div class="viz-body">
+    <div class="algo-controls">
+      <input type="text" id="pila-valor" placeholder="Valor" style="width:90px;background:#1c2230;border:1px solid #30363d;border-radius:6px;color:#e6edf3;font-family:IBM Plex Mono,monospace;font-size:12px;padding:6px 10px;outline:none;">
+      <button onclick="pilaOp('push')">Push</button>
+      <button onclick="pilaOp('pop')">Pop</button>
+      <button onclick="pilaOp('peek')">Peek</button>
+      <button onclick="pilaOp('estado')">Estado</button>
+      <button onclick="pilaReset()">Reiniciar</button>
+    </div>
+    <div id="pila-visual" style="margin:16px 0;display:flex;flex-direction:column-reverse;gap:6px;max-width:200px;"></div>
+    <div id="pila-log" class="algo-log"></div>
+  </div>
+</div>
+{% endif %}
+
 <script>
 async function reejecutar(practica, archivo) {
   const btn   = document.querySelector('.btn-rerun');
@@ -264,144 +415,6 @@ async function reejecutar(practica, archivo) {
   btn.disabled = false;
   btn.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg> Re-ejecutar';
 }
-
-// {% if archivo == 'ABB.py' %}
-let raiz = null;
-
-class Nodo {
-  constructor(v) { this.v = v; this.izq = null; this.der = null; this.x = 0; this.y = 0; }
-}
-
-function insertar(nodo, v, log) {
-  if (!nodo) return new Nodo(v);
-  if (v < nodo.v) {
-    log.push(`${v} &lt; ${nodo.v} → izquierda`);
-    nodo.izq = insertar(nodo.izq, v, log);
-  } else if (v > nodo.v) {
-    log.push(`${v} &gt; ${nodo.v} → derecha`);
-    nodo.der = insertar(nodo.der, v, log);
-  } else {
-    log.push(`${v} ya existe`);
-  }
-  return nodo;
-}
-
-function profundidad(nodo) {
-  if (!nodo) return 0;
-  return 1 + Math.max(profundidad(nodo.izq), profundidad(nodo.der));
-}
-
-function calcPos(nodo, x, y, gap) {
-  if (!nodo) return;
-  nodo.x = x; nodo.y = y;
-  calcPos(nodo.izq, x - gap, y + 70, gap / 1.8);
-  calcPos(nodo.der, x + gap, y + 70, gap / 1.8);
-}
-
-function dibujar(nuevo) {
-  const svg = document.getElementById('abb-svg');
-  const W = svg.parentElement.clientWidth || 640;
-  const H = Math.max(220, profundidad(raiz) * 80 + 50);
-  svg.setAttribute('height', H);
-  svg.innerHTML = '';
-  if (!raiz) return;
-  calcPos(raiz, W / 2, 40, W / 4);
-
-  const NS = 'http://www.w3.org/2000/svg';
-
-  function linea(x1,y1,x2,y2,isNew) {
-    const l = document.createElementNS(NS,'line');
-    l.setAttribute('x1',x1); l.setAttribute('y1',y1);
-    l.setAttribute('x2',x2); l.setAttribute('y2',y2);
-    l.setAttribute('stroke', isNew ? '#58a6ff' : '#30363d');
-    l.setAttribute('stroke-width', isNew ? '2' : '1.5');
-    return l;
-  }
-
-  function aristas(nodo) {
-    if (!nodo) return;
-    if (nodo.izq) { svg.insertBefore(linea(nodo.x,nodo.y,nodo.izq.x,nodo.izq.y,nodo.izq.v===nuevo), svg.firstChild); aristas(nodo.izq); }
-    if (nodo.der) { svg.insertBefore(linea(nodo.x,nodo.y,nodo.der.x,nodo.der.y,nodo.der.v===nuevo), svg.firstChild); aristas(nodo.der); }
-  }
-
-  function nodos(nodo) {
-    if (!nodo) return;
-    const isNew  = nodo.v === nuevo;
-    const isRaiz = nodo === raiz;
-    const g = document.createElementNS(NS,'g');
-    g.setAttribute('transform',`translate(${nodo.x},${nodo.y})`);
-
-    const c = document.createElementNS(NS,'circle');
-    c.setAttribute('r','22');
-    c.setAttribute('fill',  isNew ? '#1c2e4a' : isRaiz ? '#1c2230' : '#161b22');
-    c.setAttribute('stroke', isNew ? '#58a6ff' : '#444c56');
-    c.setAttribute('stroke-width', isNew ? '2' : '1');
-    if (isNew) c.style.animation = 'pop .3s ease-out';
-
-    const t = document.createElementNS(NS,'text');
-    t.setAttribute('text-anchor','middle');
-    t.setAttribute('dominant-baseline','central');
-    t.setAttribute('font-size','13');
-    t.setAttribute('font-family','IBM Plex Mono, monospace');
-    t.setAttribute('fill', isNew ? '#58a6ff' : '#e6edf3');
-    t.setAttribute('font-weight','500');
-    t.textContent = nodo.v;
-
-    g.appendChild(c); g.appendChild(t);
-    svg.appendChild(g);
-    nodos(nodo.izq); nodos(nodo.der);
-  }
-
-  aristas(raiz); nodos(raiz);
-  const st = document.createElementNS(NS,'style');
-  st.textContent = '@keyframes pop{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}';
-  svg.appendChild(st);
-}
-
-function insertarValor() {
-  const inp = document.getElementById('valInput');
-  const v = parseInt(inp.value);
-  if (isNaN(v)) return;
-  const log = [];
-  if (!raiz) {
-    log.push(`<b>${v}</b> es la raíz`);
-    raiz = new Nodo(v);
-  } else {
-    insertar(raiz, v, log);
-  }
-  document.getElementById('abbLog').innerHTML = log.map((l,i) =>
-    `<span class="log-step">paso ${i+1}:</span> ${l}`
-  ).join('<br>');
-  dibujar(v);
-  inp.value = ''; inp.focus();
-}
-
-function resetArbol() {
-  raiz = null; dibujar(null);
-  document.getElementById('abbLog').innerHTML = 'Inserta un valor para comenzar.';
-}
-
-let seqTimer = null;
-function cargarSecuencia(arr) {
-  resetArbol();
-  if (seqTimer) clearInterval(seqTimer);
-  let i = 0;
-  seqTimer = setInterval(() => {
-    if (i >= arr.length) { clearInterval(seqTimer); return; }
-    const v = arr[i++];
-    const log = [];
-    if (!raiz) { log.push(`<b>${v}</b> es la raíz`); raiz = new Nodo(v); }
-    else insertar(raiz, v, log);
-    document.getElementById('abbLog').innerHTML = log.map((l,j) =>
-      `<span class="log-step">paso ${j+1}:</span> ${l}`
-    ).join('<br>');
-    dibujar(v);
-  }, 900);
-}
-
-document.getElementById('valInput').addEventListener('keydown', e => {
-  if (e.key === 'Enter') insertarValor();
-});
-// {% endif %}
 </script>
+
 {% endblock %}

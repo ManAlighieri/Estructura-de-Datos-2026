@@ -52,4 +52,3 @@ for _ in range(5):
     depositar(saldos, monto_deposito, historial_saldos)
 print("Historial (saldos antes del depósito):", list(historial_saldos))
 print("Saldos después de depósitos:", list(saldos))
-

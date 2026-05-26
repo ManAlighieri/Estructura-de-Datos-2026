@@ -1,6 +1,8 @@
 #1. Construcción y Análisis de un Árbol Binario de Búsqueda (ABB)
 #Descripción: Dada la secuencia de números , se debe describir paso a paso cómo se insertaría cada elemento en un ABB, respetando la propiedad clave: 
 # los valores menores al nodo van a la izquierda y los mayores a la derecha.
+import sys
+sys.stdout.reconfigure(encoding='utf-8')
 
 class NodoArbol:
     def __init__(self,clave,valor,izquierdo=None,derecho=None,padre=None):
