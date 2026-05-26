@@ -1,0 +1,6 @@
+INSTRUCCIONES DE EJECUCIÓN
+1. Ejecutar la aplicación:
+   python Proyecto/app.py
+
+2. Abrir en el navegador (solo local):
+   http://127.0.0.1:5000
